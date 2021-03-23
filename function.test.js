@@ -1,4 +1,7 @@
-const { fakeMap, fabFilter } = require('./functions');
+const { fakeMap, fabFilter, fakeFinder } = require('./functions');
+
+const myArray = [2, 3, 7, 4];
+const findEvens = (num) => num % 2 === 0;
 
 describe('map without map', () => {
   it('it takes in an array of numbers and adds 2 onto each of them', () => {
@@ -9,9 +12,14 @@ describe('map without map', () => {
 
 describe('filter no filter', () => {
   it('it takes in an array of numbers and returns all even numbers', () => {
-    const myArray = [2, 3, 7, 4];
-    const findEvens = (num) => num % 2 === 0;
+    
 
     expect(fabFilter(myArray, findEvens)).toEqual([2, 4]);
   });
 });
+
+describe('index no index()', () => {
+    it('it takes an array and returns the the first even number it encounters', () => {
+    expect(fakeFinder(myArray, findEvens)).toEqual([2])
+    })
+})

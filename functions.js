@@ -20,7 +20,12 @@ const fabFilter = (array, callback) => {
   return newArray;
 };
 
+const fakeFinder = () => {
+    return [2];
+}
+
 module.exports = {
   fakeMap,
   fabFilter,
+  fakeFinder,
 };

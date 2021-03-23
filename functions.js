@@ -20,9 +20,16 @@ const fabFilter = (array, callback) => {
   return newArray;
 };
 
-const fakeFinder = () => {
-    return [2];
-}
+const fakeFinder = (array, callback) => {
+  let newArray = [];
+  for (let index = 0; index < array.length; index++) {
+    if (callback(array[index]) === true) {
+      newArray = [array[index]];
+      break;
+    }
+  }
+  return newArray;
+};
 
 module.exports = {
   fakeMap,

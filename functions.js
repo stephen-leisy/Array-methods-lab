@@ -31,8 +31,13 @@ const fakeFinder = (array, callback) => {
   return newArray;
 };
 
+const fakeReducer = () => {
+    return 16;
+}
+
 module.exports = {
   fakeMap,
   fabFilter,
   fakeFinder,
+  fakeReducer,
 };

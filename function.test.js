@@ -1,4 +1,4 @@
-const { fakeMap, fabFilter, fakeFinder } = require('./functions');
+const { fakeMap, fabFilter, fakeFinder, fakeReducer } = require('./functions');
 
 const myArray = [2, 3, 7, 4];
 const mySecondArray = [3, 7, 2, 2, 9];
@@ -28,3 +28,10 @@ describe('index no index()', () => {
     expect(fakeFinder(mySecondArray, findEvens)).toEqual([2]);
   });
 });
+
+describe('reduce no reduce()', () => {
+    it('it takes an array of numbers adds them together and returns the sum', () => {
+        const accumulator = (acc, num) => acc + num;
+        expect(fakeReducer(myArray, accumulator, 0)).toEqual(16);
+    })
+})

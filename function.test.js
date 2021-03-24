@@ -31,7 +31,8 @@ describe('index no index()', () => {
 
 describe('reduce no reduce()', () => {
     it('it takes an array of numbers adds them together and returns the sum', () => {
-        const accumulator = (acc, num) => acc + num;
-        expect(fakeReducer(myArray, accumulator, 0)).toEqual(16);
+        const freshArray = [4, 4, 6, 2]
+        const result = fakeReducer(freshArray, (acc, item) => acc + item, 0)
+        expect(result).toEqual(16)
     })
 })

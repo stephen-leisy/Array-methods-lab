@@ -1,4 +1,4 @@
-const { fakeMap, fabFilter, fakeFinder, fakeReducer } = require('./functions');
+const { fakeMap, fabFilter, fakeFinder, fakeReducer, fakeEvery } = require('./functions');
 
 const myArray = [2, 3, 7, 4];
 const mySecondArray = [3, 7, 2, 2, 9];
@@ -30,9 +30,19 @@ describe('index no index()', () => {
 });
 
 describe('reduce no reduce()', () => {
-    it('it takes an array of numbers adds them together and returns the sum', () => {
-        const freshArray = [4, 4, 6, 2]
-        const result = fakeReducer(freshArray, (acc, item) => acc + item, 0)
-        expect(result).toEqual(16)
-    })
-})
+  it('it takes an array of numbers adds them together and returns the sum', () => {
+    const freshArray = [4, 4, 6, 2];
+    const result = fakeReducer(freshArray, (acc, item) => acc + item, 0);
+    expect(result).toEqual(16);
+  });
+  it('it takes an array of numbers adds them together and returns the sum', () => {
+    const result = fakeReducer(mySecondArray, (acc, item) => acc + item, 0);
+    expect(result).toEqual(23);
+  });
+});
+describe('every no every()', () => {
+  it('it returns true if all numbers in an array are under 8', () => {
+    const notMoreThan = (num) => num < 8;
+    expect(fakeEvery(mySecondArray, notMoreThan)).toEqual(false);
+  });
+});

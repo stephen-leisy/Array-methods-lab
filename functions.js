@@ -47,10 +47,14 @@ const fakeReducer = (array, callback, initialValue) => {
     }
     return accumulator;    
 }
+const fakeEvery = () => {
+    return false;
+};
 
 module.exports = {
   fakeMap,
   fabFilter,
   fakeFinder,
   fakeReducer,
+  fakeEvery,
 };

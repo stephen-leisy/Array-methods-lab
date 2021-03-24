@@ -41,8 +41,12 @@ describe('reduce no reduce()', () => {
   });
 });
 describe('every no every()', () => {
+  it('it returns false if all numbers in an array are not under 8', () => {
+    const notMoreThan = (num) => num <= 8;
+    expect(fakeEvery(mySecondArray, notMoreThan)).toBeFalsy();
+  });
   it('it returns true if all numbers in an array are under 8', () => {
-    const notMoreThan = (num) => num < 8;
-    expect(fakeEvery(mySecondArray, notMoreThan)).toEqual(false);
+    const notMoreThan = (num) => num <= 8;
+    expect(fakeEvery(myArray, notMoreThan)).toBeTruthy();
   });
 });

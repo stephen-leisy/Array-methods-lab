@@ -47,8 +47,16 @@ const fakeReducer = (array, callback, initialValue) => {
     }
     return accumulator;    
 }
-const fakeEvery = () => {
-    return false;
+const fakeEvery = (array, callback) => {
+    for (let index = 0; index < array.length; index++) {
+        if(callback(array[index]) !== true) {
+            return false
+        } else {
+            
+        };
+        
+    }
+    return true
 };
 
 module.exports = {
